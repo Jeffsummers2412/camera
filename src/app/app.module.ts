@@ -3,17 +3,22 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { CameraPage } from '../pages/camera/camera';
+import { GeolocationPage } from '../pages/geolocation/geolocation';
+import { BrightnessPage } from '../pages/brightness/brightness';
+import { Camera } from '@ionic-native/camera'
+import { Geolocation } from '@ionic-native/geolocation'
+import { Brightness } from '@ionic-native/brightness'
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    ListPage
+    CameraPage,
+    GeolocationPage,
+    BrightnessPage
   ],
   imports: [
     BrowserModule,
@@ -22,13 +27,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    ListPage
+    CameraPage,
+    GeolocationPage,
+    BrightnessPage
+   
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Camera,
+    Geolocation,
+    Brightness
   ]
 })
 export class AppModule {}

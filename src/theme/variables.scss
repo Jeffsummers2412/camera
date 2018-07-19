@@ -86,3 +86,8 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+$toolbar-background:  map-get($colors, secondary);
+$toolbar-ios-height: 60px;
+$toolbar-md-height: 56px;
+$tollbar-ep-height: 46px;
